@@ -11,6 +11,7 @@ const App: React.FC = () => {
           Edit <code>src/App.tsx</code> and save to reload.
         </p>
         <h1>change 1</h1>
+        <h2>change 2</h2>
         <a
           className="App-link"
           href="https://reactjs.org"
