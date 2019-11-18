@@ -10,6 +10,7 @@ const App: React.FC = () => {
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
         </p>
+        <h1>change 1</h1>
         <a
           className="App-link"
           href="https://reactjs.org"
@@ -21,6 +22,6 @@ const App: React.FC = () => {
       </header>
     </div>
   );
-}
+};
 
 export default App;
