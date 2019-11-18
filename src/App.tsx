@@ -1,29 +1,17 @@
 import React from 'react';
-import logo from './logo.svg';
+import { Switch, Route } from 'react-router-dom';
+import HomePage from './pages/homepage/homepage.component';
+
 import './App.css';
 
-const App: React.FC = () => {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <h1>change 1</h1>
-        <h2>change 2</h2>
-        <h2>change 32</h2>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-};
+class App extends React.Component {
+  render() {
+    return (
+      <Switch>
+        <Route exact path="/" component={HomePage} />
+      </Switch>
+    );
+  }
+}
 
 export default App;
