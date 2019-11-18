@@ -12,6 +12,7 @@ const App: React.FC = () => {
         </p>
         <h1>change 1</h1>
         <h2>change 2</h2>
+        <h2>change 3</h2>
         <a
           className="App-link"
           href="https://reactjs.org"
