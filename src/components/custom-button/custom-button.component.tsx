@@ -4,10 +4,19 @@ import './custom-buttom.styles.scss';
 
 type CustomButtonProps = {
   children?: string;
-  type: 'submit';
+  type?: 'submit';
+  onClick?: () => void;
+  isGoogleSignIn?: true | false;
 };
-const CustomButton = ({ children, ...otherProps }: CustomButtonProps) => (
-  <button className="custom-button" {...otherProps}>
+const CustomButton = ({
+  children,
+  isGoogleSignIn,
+  ...otherProps
+}: CustomButtonProps) => (
+  <button
+    className={`${isGoogleSignIn ? 'google-sign-in' : ''} custom-button`}
+    {...otherProps}
+  >
     {children}
   </button>
 );

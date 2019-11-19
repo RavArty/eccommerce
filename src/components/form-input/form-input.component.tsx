@@ -2,11 +2,12 @@ import React from 'react';
 
 import './form-input.styles.scss';
 interface IFormatInput {
-  handleChange(event: React.SyntheticEvent<HTMLInputElement>): void;
+  handleChange?(event: React.SyntheticEvent<HTMLInputElement>): void;
   label: string;
   value: string;
   name?: string;
   type?: string;
+  onChange?: (event: React.FormEvent<HTMLInputElement>) => void;
   required: true | false;
 }
 
