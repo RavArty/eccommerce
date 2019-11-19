@@ -1,19 +1,22 @@
 import { UserActionTypes } from './user.types';
 
-// interface Entity {
-//   id: string;
-// }
+interface Entity {
+  id?: string;
+  [field: string]: any;
+}
 // export interface IUserState {
-//   user?: firebase.User | Entity;
+//   currentUser: Entity | null;
 // }
-export type DocumentData = { [field: string]: any };
+export type UserState = Entity | null;
+//type DocumentData = { [field: string]: any };
+// export type UserType = DocumentData | null;
 
 export interface SetCurUserAction {
   type: UserActionTypes.setCurrentUser;
-  payload: DocumentData;
+  payload: UserState;
 }
 
-export const setCurrentUser = (user: DocumentData) => ({
+export const setCurrentUser = (user: UserState) => ({
   type: UserActionTypes.setCurrentUser,
   payload: user
 });

@@ -5,11 +5,16 @@ import { connect } from 'react-redux';
 import { auth } from '../../firebase/firebase.utils';
 import { IAppState } from '../../App';
 import { ReactComponent as Logo } from '../../assets/logo.svg';
-import { DocumentData } from '../../redux/user/user.actions';
+import { UserState } from '../../redux/user/user.actions';
+import { AppState } from '../../redux/root-reducer';
 import './header.styles.scss';
 
+interface IHeaderProps {
+  currentUser: UserState;
+}
+
 //interface IHeaderProps extends IAppState {}
-const Header = ({ currentUser }: DocumentData): JSX.Element => (
+const Header = ({ currentUser }: IHeaderProps): JSX.Element => (
   <div className="header">
     <Link className="logo-container" to="/">
       <Logo className="logo" />
@@ -34,8 +39,8 @@ const Header = ({ currentUser }: DocumentData): JSX.Element => (
   </div>
 );
 
-const mapStateToProps = ({ user }: DocumentData) => ({
-  currentUser: user.currentUser
+const mapStateToProps = (state: AppState) => ({
+  currentUser: state.user.currentUser
 });
 
 export default connect(mapStateToProps)(Header);

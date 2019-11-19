@@ -1,14 +1,16 @@
 import { UserActionTypes } from './user.types';
-import { SetCurUserAction, DocumentData } from './user.actions';
+import { UserState } from './user.actions';
+import { Action } from './user.types';
 
-const INITIAL_STATE = {
+interface IStateCheck {
+  currentUser: UserState;
+}
+
+const INITIAL_STATE: IStateCheck = {
   currentUser: null
 };
 
-const userReducer = (
-  state: DocumentData = INITIAL_STATE,
-  action: SetCurUserAction
-) => {
+const userReducer = (state = INITIAL_STATE, action: Action) => {
   switch (action.type) {
     case UserActionTypes.setCurrentUser:
       return {
