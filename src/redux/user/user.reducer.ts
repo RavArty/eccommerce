@@ -2,11 +2,11 @@ import { UserActionTypes } from './user.types';
 import { UserState } from './user.actions';
 import { UserAction } from './user.types';
 
-interface IStateCheck {
+interface IUserStateCheck {
   currentUser: UserState;
 }
 
-const INITIAL_STATE: IStateCheck = {
+const INITIAL_STATE: IUserStateCheck = {
   currentUser: null
 };
 
