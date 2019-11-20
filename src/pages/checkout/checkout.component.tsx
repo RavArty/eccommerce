@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 
-//import CheckoutItem from '../../components/checkout-item/checkout-item.component';
+import CheckoutItem from '../../components/checkout-item/checkout-item.component';
 import { ITypeData } from '../../components/collection-item/collection-item.component';
 import { AppState } from '../../redux/root-reducer';
 import {
@@ -36,9 +36,9 @@ const CheckoutPage = ({ cartItems, total }: ICheckoutPageProps) => (
         <span>Remove</span>
       </div>
     </div>
-    {/* {cartItems.map(cartItem => (
+    {cartItems.map(cartItem => (
       <CheckoutItem key={cartItem.id} cartItem={cartItem} />
-    ))} */}
+    ))}
     <div className="total">TOTAL: ${total}</div>
   </div>
 );
