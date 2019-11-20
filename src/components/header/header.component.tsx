@@ -1,13 +1,23 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+
 import { auth } from '../../firebase/firebase.utils';
-import { IAppState } from '../../App';
+import CartIcon from '../cart-icon/cart-icon.component';
+import CartDropdown from '../cart-dropdown/cart-dropdown.component';
 import { ReactComponent as Logo } from '../../assets/logo.svg';
 
+import { UserState } from '../../redux/user/user.actions';
+import { AppState } from '../../redux/root-reducer';
 import './header.styles.scss';
 
-interface IHeaderProps extends IAppState {}
-const Header = ({ currentUser }: IHeaderProps): JSX.Element => (
+interface IHeaderProps {
+  currentUser: UserState;
+  hidden: boolean;
+}
+
+//interface IHeaderProps extends IAppState {}
+const Header = ({ currentUser, hidden }: IHeaderProps): JSX.Element => (
   <div className="header">
     <Link className="logo-container" to="/">
       <Logo className="logo" />
@@ -28,8 +38,15 @@ const Header = ({ currentUser }: IHeaderProps): JSX.Element => (
           SIGN IN
         </Link>
       )}
+      <CartIcon />
     </div>
+    {hidden ? null : <CartDropdown />}
   </div>
 );
 
-export default Header;
+const mapStateToProps = (state: AppState) => ({
+  currentUser: state.user.currentUser,
+  hidden: state.cart.hidden
+});
+
+export default connect(mapStateToProps)(Header);

@@ -1,52 +1,49 @@
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { Dispatch } from 'redux';
 
 import HomePage from './pages/homepage/homepage.component';
 import ShopPage from './pages/shop/shop.component';
 import Header from './components/header/header.component';
 import SignInAndSignUpPage from './pages/sign-in-and-sign-up/sign-in-and-sign-up.component';
 import { auth, createUserProfileDocument } from './firebase/firebase.utils';
+import { setCurrentUser, UserState } from './redux/user/user.actions';
+import { AppState } from './redux/root-reducer';
+
 import './App.css';
 
 interface Entity {
   id: string;
 }
-interface IAppProps {}
-export interface IAppState {
-  currentUser: firebase.User | null | Entity;
+interface IAppProps {
+  currentUser: UserState;
+  setCurrentUser: typeof setCurrentUser;
 }
+
+export interface IAppState {}
 class App extends React.Component<IAppProps, IAppState> {
-  constructor(props: IAppProps) {
-    super(props);
-
-    this.state = {
-      currentUser: null
-    };
-  }
-
   unsubscribeFromAuth: firebase.Unsubscribe | null = null;
 
   componentDidMount() {
+    const { setCurrentUser } = this.props;
     this.unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
       if (userAuth) {
         const userRef:
           | firebase.firestore.DocumentReference
           | undefined = await createUserProfileDocument(userAuth);
+
         if (!userRef) return;
 
         userRef.onSnapshot(snapShot => {
-          this.setState({
-            currentUser: {
-              id: snapShot.id,
-              ...snapShot.data()
-            }
+          setCurrentUser({
+            id: snapShot.id,
+            ...snapShot.data()
           });
-
-          console.log(this.state);
         });
+      } else {
+        setCurrentUser(userAuth);
       }
-
-      this.setState({ currentUser: userAuth });
     });
   }
 
@@ -58,15 +55,33 @@ class App extends React.Component<IAppProps, IAppState> {
   render() {
     return (
       <div>
-        <Header currentUser={this.state.currentUser} />
+        <Header />
         <Switch>
           <Route exact path="/" component={HomePage} />
           <Route path="/shop" component={ShopPage} />
-          <Route path="/signin" component={SignInAndSignUpPage} />
+          <Route
+            exact
+            path="/signin"
+            render={() =>
+              this.props.currentUser ? (
+                <Redirect to="/" />
+              ) : (
+                <SignInAndSignUpPage />
+              )
+            }
+          />
         </Switch>
       </div>
     );
   }
 }
 
-export default App;
+const mapStateToProps = ({ user }: AppState) => ({
+  currentUser: user.currentUser
+});
+
+const mapDispatchToProps = (dispatch: Dispatch) => ({
+  setCurrentUser: (user: UserState) => dispatch(setCurrentUser(user))
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
