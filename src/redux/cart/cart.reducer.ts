@@ -1,5 +1,6 @@
 import { CartActionTypes, CartActions } from './cart.types';
 import { ITypeData } from '../../components/collection-item/collection-item.component';
+import { addItemToCart } from './cart.utils';
 
 interface ICartCheck {
   hidden: boolean;
@@ -20,7 +21,7 @@ const cartReducer = (state = INITIAL_STATE, action: CartActions) => {
     case CartActionTypes.ADD_ITEM:
       return {
         ...state,
-        cartItems: [...state.cartItems, action.payload]
+        cartItems: addItemToCart(state.cartItems, action.payload)
       };
     default:
       return state;
