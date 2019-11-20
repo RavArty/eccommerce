@@ -12,11 +12,11 @@ export type UserState = Entity | null;
 // export type UserType = DocumentData | null;
 
 export interface SetCurUserAction {
-  type: UserActionTypes.setCurrentUser;
+  type: UserActionTypes.SET_CURRENT_USER;
   payload: UserState;
 }
 
 export const setCurrentUser = (user: UserState) => ({
-  type: UserActionTypes.setCurrentUser,
+  type: UserActionTypes.SET_CURRENT_USER,
   payload: user
 });

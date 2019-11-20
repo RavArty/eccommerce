@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 
 import { auth } from '../../firebase/firebase.utils';
 import CartIcon from '../cart-icon/cart-icon.component';
+import CartDropdown from '../cart-dropdown/cart-dropdown.component';
 import { ReactComponent as Logo } from '../../assets/logo.svg';
 
 import { UserState } from '../../redux/user/user.actions';
@@ -12,10 +13,11 @@ import './header.styles.scss';
 
 interface IHeaderProps {
   currentUser: UserState;
+  hidden: boolean;
 }
 
 //interface IHeaderProps extends IAppState {}
-const Header = ({ currentUser }: IHeaderProps): JSX.Element => (
+const Header = ({ currentUser, hidden }: IHeaderProps): JSX.Element => (
   <div className="header">
     <Link className="logo-container" to="/">
       <Logo className="logo" />
@@ -38,11 +40,13 @@ const Header = ({ currentUser }: IHeaderProps): JSX.Element => (
       )}
       <CartIcon />
     </div>
+    {hidden ? null : <CartDropdown />}
   </div>
 );
 
 const mapStateToProps = (state: AppState) => ({
-  currentUser: state.user.currentUser
+  currentUser: state.user.currentUser,
+  hidden: state.cart.hidden
 });
 
 export default connect(mapStateToProps)(Header);

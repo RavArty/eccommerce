@@ -1,6 +1,7 @@
 import { SetCurUserAction } from './user.actions';
+
 export enum UserActionTypes {
-  setCurrentUser
+  SET_CURRENT_USER = 'SET_CURRENT_USER'
 }
 
-export type Action = SetCurUserAction;
+export type UserAction = SetCurUserAction;

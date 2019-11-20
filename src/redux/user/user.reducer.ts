@@ -1,6 +1,6 @@
 import { UserActionTypes } from './user.types';
 import { UserState } from './user.actions';
-import { Action } from './user.types';
+import { UserAction } from './user.types';
 
 interface IStateCheck {
   currentUser: UserState;
@@ -10,9 +10,9 @@ const INITIAL_STATE: IStateCheck = {
   currentUser: null
 };
 
-const userReducer = (state = INITIAL_STATE, action: Action) => {
+const userReducer = (state = INITIAL_STATE, action: UserAction) => {
   switch (action.type) {
-    case UserActionTypes.setCurrentUser:
+    case UserActionTypes.SET_CURRENT_USER:
       return {
         ...state,
         currentUser: action.payload
