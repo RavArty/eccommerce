@@ -11,6 +11,7 @@ export interface ITypeData {
   name: string;
   price: number;
   imageUrl: string;
+  quantity?: number;
 }
 interface ICollectionItemProps {
   item: ITypeData;
