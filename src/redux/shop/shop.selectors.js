@@ -1,7 +1,7 @@
 import { createSelector } from 'reselect';
 import { AppState } from '../root-reducer';
 
-const selectShop = (state: AppState) => state.shop;
+const selectShop = state => state.shop;
 
 export const selectCollections = createSelector(
   [selectShop],
@@ -10,11 +10,11 @@ export const selectCollections = createSelector(
 
 export const selectCollectionsForPreview = createSelector(
   [selectCollections],
-  (collections: any) => Object.keys(collections).map(key => collections[key])
+  collections => Object.keys(collections).map(key => collections[key])
 );
 
-export const selectCollection = (collectionUrlParam: any) =>
+export const selectCollection = collectionUrlParam =>
   createSelector(
     [selectCollections],
-    (collections: any) => collections[collectionUrlParam]
+    collections => collections[collectionUrlParam]
   );

@@ -7,7 +7,7 @@ import MenuItem from '../menu-item/menu-item.component';
 import './directory.styles.scss';
 import { AppState } from '../../redux/root-reducer';
 
-interface IMenuItems {
+export interface IMenuItems {
   title: string;
   imageUrl: string;
   id: number;
