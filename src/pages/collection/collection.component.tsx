@@ -9,6 +9,7 @@ import './collection.styles.scss';
 import { AppState } from '../../redux/root-reducer';
 
 const CollectionPage = ({ collection }: any) => {
+  console.log('CollectionPage: ', collection);
   const { title, items } = collection;
   return (
     <div className="collection-page">
