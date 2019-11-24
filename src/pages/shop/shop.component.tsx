@@ -24,10 +24,14 @@ class ShopPage extends React.Component<ISHopPageProps, {}> {
     const { updateCollections } = this.props;
     const collectionRef = firestore.collection('collections');
 
+    //  collectionRef.onSnapshot(async snapshot => {
+    //   const collectionsMap = convertCollectionsSnapshotToMap(snapshot);
+    //   console.log('map: ', collectionsMap);
+    // });
     collectionRef.get().then(snapshot => {
       const collectionsMap = convertCollectionsSnapshotToMap(snapshot);
       updateCollections(collectionsMap);
-      //   this.setState({ loading: false });
+      this.setState({ loading: false });
     });
   }
 
@@ -51,3 +55,4 @@ const mapDispatchToProps = (dispatch: Dispatch) => ({
 });
 
 export default connect(null, mapDispatchToProps)(ShopPage);
+//export default ShopPage;
