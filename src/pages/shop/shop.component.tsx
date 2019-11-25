@@ -31,11 +31,13 @@ class ShopPage extends React.Component<ISHopPageProps, {}> {
   componentDidMount() {
     const { updateCollections } = this.props;
     const collectionRef = firestore.collection('collections');
-
+    //here using live update stream style
     //  collectionRef.onSnapshot(async snapshot => {
     //   const collectionsMap = convertCollectionsSnapshotToMap(snapshot);
     //   console.log('map: ', collectionsMap);
     // });
+
+    //here we got data only when component remounts
     collectionRef.get().then(snapshot => {
       const collectionsMap = convertCollectionsSnapshotToMap(snapshot);
       updateCollections(collectionsMap);
