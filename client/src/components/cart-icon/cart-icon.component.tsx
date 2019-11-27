@@ -17,7 +17,6 @@ const CartIcon = ({
   toggleCartHidden,
   itemCount
 }: ICartIconProps): JSX.Element => {
-  console.log('count: ', itemCount);
   return (
     <div className="cart-icon" onClick={toggleCartHidden}>
       <ShoppingIcon className="shopping-icon" />
