@@ -13,12 +13,16 @@ import { ITypeData } from '../collection-item/collection-item.component';
 import { RouteComponentProps } from 'react-router-dom';
 import './cart-dropdown.styles.scss';
 
-interface ICartDropdownProps extends RouteComponentProps {
+export interface ICartDropdownProps extends RouteComponentProps {
   cartItems: ITypeData[];
   dispatch: Dispatch;
 }
 
-const CartDropdown = ({ cartItems, history, dispatch }: ICartDropdownProps) => (
+export const CartDropdown = ({
+  cartItems,
+  history,
+  dispatch
+}: ICartDropdownProps) => (
   <div className="cart-dropdown">
     <div className="cart-items">
       {cartItems.length ? (
