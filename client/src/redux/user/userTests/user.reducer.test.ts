@@ -7,11 +7,11 @@ const initialState = {
 
 describe('userReducer', () => {
   it('should return initial state', () => {
-    expect(userReducer(undefined, {})).toEqual(initialState);
+    expect(userReducer(undefined, {} as any)).toEqual(initialState);
   });
 
   it('should set currentUser to payload on setCurrentUser action', () => {
-    const mockUser = { id: 1, displayName: 'Rav' };
+    const mockUser = { id: '1', displayName: 'Rav' };
 
     expect(
       userReducer(initialState, {
