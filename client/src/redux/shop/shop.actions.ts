@@ -4,6 +4,7 @@ import {
   convertCollectionsSnapshotToMap
 } from '../../firebase/firebase.utils';
 import { Dispatch } from 'redux';
+
 // export const updateCollections = (collectionsMap: any) => ({
 //   type: ShopActionTypes.UPDATE_COLLECTIONS,
 //   payload: collectionsMap
