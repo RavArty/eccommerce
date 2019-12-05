@@ -10,12 +10,14 @@ import { toggleCartHidden } from '../../redux/cart/cart.actions';
 import { Dispatch } from 'redux';
 import { AppState } from '../../redux/root-reducer';
 import { ITypeData } from '../collection-item/collection-item.component';
-import { RouteComponentProps } from 'react-router-dom';
+//import { RouteComponentProps } from 'react-router-dom';
+import { History } from 'history';
 import './cart-dropdown.styles.scss';
 
-export interface ICartDropdownProps extends RouteComponentProps {
+export interface ICartDropdownProps {
   cartItems: ITypeData[];
   dispatch: Dispatch;
+  history: History;
 }
 
 export const CartDropdown = ({

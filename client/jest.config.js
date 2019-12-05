@@ -15,6 +15,10 @@ module.exports = {
   testRegex: '(/__tests__/.*|(\\.|/)(test|spec))\\.tsx?$',
   // Module file extensions for importing
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
+  moduleNameMapper: {
+    //   "^.+\\.svg$": "<rootDir>/svgTransform.js" ,
+    '\\.(css|less|scss|sass)$': 'identity-obj-proxy'
+  },
   snapshotSerializers: ['enzyme-to-json/serializer'],
   setupFilesAfterEnv: ['<rootDir>/src/setupEnzyme.ts']
 };

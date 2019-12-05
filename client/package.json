@@ -55,6 +55,7 @@
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.15.1",
     "enzyme-to-json": "^3.4.3",
+    "identity-obj-proxy": "^3.0.0",
     "redux-mock-store": "^1.5.3",
     "ts-jest": "^24.2.0"
   }
