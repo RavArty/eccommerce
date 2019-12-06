@@ -2,7 +2,7 @@ import { CartActionTypes, CartActions } from './cart.types';
 import { ITypeData } from '../../components/collection-item/collection-item.component';
 import { addItemToCart, removeItemFromCart } from './cart.utils';
 
-interface ICartCheck {
+export interface ICartCheck {
   hidden: boolean;
   cartItems: ITypeData[];
 }

@@ -1,4 +1,6 @@
 import { CartActionTypes } from '../cart.types';
+import { ITypeData } from '../../../components/collection-item/collection-item.component';
+
 import {
   toggleCartHidden,
   addItem,
@@ -13,11 +15,13 @@ describe('toggleCartHidden action', () => {
 });
 
 describe('addItem action', () => {
+  const mockItem: ITypeData = {
+    id: 1,
+    name: 'name',
+    price: 5,
+    imageUrl: 'image'
+  };
   it('should create the addItem action', () => {
-    const mockItem = {
-      id: 1
-    };
-
     const action = addItem(mockItem);
 
     expect(action.type).toEqual(CartActionTypes.ADD_ITEM);
@@ -26,11 +30,13 @@ describe('addItem action', () => {
 });
 
 describe('clearItemFromCart action', () => {
+  const mockItem: ITypeData = {
+    id: 1,
+    name: 'name',
+    price: 5,
+    imageUrl: 'image'
+  };
   it('should create the clearItemFromCart action', () => {
-    const mockItem = {
-      id: 1
-    };
-
     const action = clearItemFromCart(mockItem);
 
     expect(action.type).toEqual(CartActionTypes.CLEAR_ITEM_FROM_CART);
@@ -39,11 +45,14 @@ describe('clearItemFromCart action', () => {
 });
 
 describe('removeItem action', () => {
-  it('should create the removeItem action', () => {
-    const mockItem = {
-      id: 1
-    };
+  const mockItem: ITypeData = {
+    id: 1,
+    name: 'name',
+    price: 5,
+    imageUrl: 'image'
+  };
 
+  it('should create the removeItem action', () => {
     const action = removeItem(mockItem);
 
     expect(action.type).toEqual(CartActionTypes.REMOVE_ITEM);

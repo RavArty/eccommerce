@@ -17,7 +17,7 @@ interface ICollectionItemProps {
   item: ITypeData;
   addItem: typeof addItem;
 }
-const CollectionItem = ({
+export const CollectionItem = ({
   item,
   addItem
 }: ICollectionItemProps): JSX.Element => {

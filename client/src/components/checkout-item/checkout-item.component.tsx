@@ -9,14 +9,14 @@ import {
 } from '../../redux/cart/cart.actions';
 import './checkout-item.styles.scss';
 
-interface ICartItemProps {
+export interface ICartItemProps {
   cartItem: ITypeData;
   clearItem: typeof clearItemFromCart;
   addItem: typeof addItem;
   removeItem: typeof removeItem;
 }
 
-const CheckoutItem = ({
+export const CheckoutItem = ({
   cartItem,
   clearItem,
   addItem,
