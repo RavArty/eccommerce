@@ -24,7 +24,7 @@ export const CartDropdown = ({
   cartItems,
   history,
   dispatch
-}: ICartDropdownProps) => (
+}: ICartDropdownProps): JSX.Element => (
   <div className="cart-dropdown">
     <div className="cart-items">
       {cartItems.length ? (

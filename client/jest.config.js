@@ -6,8 +6,9 @@ module.exports = {
   //The transform config just tells jest to use
   //ts-jest for ts / tsx files.
   transform: {
-    '^.+\\.tsx?$': 'ts-jest' //,
-    //  "^.+\\.svg$": "<rootDir>/svgTransform.js"
+    '^.+\\.tsx?$': 'ts-jest'
+    // '^.+\\.svg$': 'jest-svg-transformer'
+    // '^.+\\.svg$': '<rootDir>/src/__mocks__/svgTransform.js'
   },
   // Test spec file resolution pattern
   // Matches parent folder `__tests__` and filename
@@ -16,7 +17,7 @@ module.exports = {
   // Module file extensions for importing
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
   moduleNameMapper: {
-    //   "^.+\\.svg$": "<rootDir>/svgTransform.js" ,
+    '^.+\\.svg$': '<rootDir>/src/__mocks__/svgTransform.js',
     '\\.(css|less|scss|sass)$': 'identity-obj-proxy'
   },
   snapshotSerializers: ['enzyme-to-json/serializer'],
