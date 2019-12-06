@@ -2,6 +2,7 @@ import React from 'react';
 import { shallow, ShallowWrapper } from 'enzyme';
 import { findByTestAttr } from '../../_test/testUtils';
 import { CheckoutItem, ICartItemProps } from './checkout-item.component';
+import { Dispatch } from 'redux';
 import {
   clearItemFromCart,
   addItem,

@@ -3,7 +3,6 @@ import React from 'react';
 import { shallow, ShallowWrapper } from 'enzyme';
 import { findByTestAttr } from '../../_test/testUtils';
 import { CartDropdown } from './cart-dropdown.component';
-//import CustomButton from '../custom-button/custom-button.component';
 import { toggleCartHidden } from '../../redux/cart/cart.actions';
 
 import { ICartDropdownProps } from './cart-dropdown.component';
