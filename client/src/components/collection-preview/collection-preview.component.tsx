@@ -5,7 +5,7 @@ import CollectionItem from '../collection-item/collection-item.component';
 import { RouteComponentProps } from 'react-router-dom';
 import './collection-preview.styles.scss';
 
-interface ICollectionPreview extends RouteComponentProps {
+interface ICollectionPreview {
   title: string;
   items: any;
 }

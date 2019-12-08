@@ -17,7 +17,7 @@ module.exports = {
   // Module file extensions for importing
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
   moduleNameMapper: {
-    '^.+\\.svg$': '<rootDir>/src/__mocks__/svgTransform.js',
+    '^.+\\.svg$': '<rootDir>/src/__mocks__/svgTransform.ts',
     '\\.(css|less|scss|sass)$': 'identity-obj-proxy'
   },
   snapshotSerializers: ['enzyme-to-json/serializer'],

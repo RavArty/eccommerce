@@ -1,6 +1,3 @@
-//After exporting unconnected component
-//jest doensn't like svg component inside - doesn't see parent component
-
 import React from 'react';
 import { shallow, ShallowWrapper } from 'enzyme';
 import { CartIcon } from './cart-icon.component';
@@ -25,14 +22,17 @@ describe('CartIcon component', () => {
       toggleCartHidden: mockToggleCartHidden
     };
     wrapper = shallow(<CartIcon {...mockProps} />);
-    // wrapper = shallow(<CartIcon {...mockProps} store={mockStore} />).dive();
   });
   it('should call toggleCartHidden when icon is clicked', () => {
-    console.log(wrapper.debug());
-    //  const cartIcon = findByTestAttr(wrapper, 'cart-icon');
-    //  cartIcon.simulate('click');
-    // expect(cartIcon.length).toBe(1);
-    // wrapper.find('CartContainer').simulate('click');
-    //   expect(mockToggleCartHidden).toHaveBeenCalled();
+    //console.log(wrapper.debug());
+    const cartIcon = findByTestAttr(wrapper, 'cart-icon');
+    cartIcon.simulate('click');
+    expect(mockToggleCartHidden).toHaveBeenCalled();
+  });
+
+  it('should render the itemCount as the text', () => {
+    const cartIcon = parseInt(findByTestAttr(wrapper, 'cart-icon').text());
+    //const itemCount = parseInt(wrapper.find('ItemCountContainer').text());
+    expect(cartIcon).toBe(0);
   });
 });
