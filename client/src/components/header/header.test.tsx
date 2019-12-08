@@ -41,4 +41,23 @@ describe('Header component', () => {
       expect(input).toBe('SIGN IN');
     });
   });
+
+  describe('if hidden is true', () => {
+    it('should not render CartDropdown', () => {
+      expect(wrapper.exists(CartDropdown)).toBe(false);
+    });
+  });
+
+  describe('if currentUser is null', () => {
+    it('should render CartDropdown', () => {
+      const mockProps = {
+        hidden: false,
+        currentUser: null
+      };
+
+      const newWrapper = shallow(<Header {...mockProps} />);
+
+      expect(newWrapper.exists(CartDropdown)).toBe(true);
+    });
+  });
 });
