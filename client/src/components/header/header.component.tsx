@@ -15,7 +15,7 @@ import { UserState } from '../../redux/user/user.actions';
 import { AppState } from '../../redux/root-reducer';
 import './header.styles.scss';
 
-interface IHeaderProps {
+export interface IHeaderProps {
   currentUser: UserState;
   hidden: boolean;
 }
@@ -25,7 +25,7 @@ interface IHeaderProps {
 // }
 
 //interface IHeaderProps extends IAppState {}
-const Header = ({ currentUser, hidden }: IHeaderProps): JSX.Element => (
+export const Header = ({ currentUser, hidden }: IHeaderProps): JSX.Element => (
   <div className="header">
     <Link className="logo-container" to="/">
       <Logo className="logo" />
