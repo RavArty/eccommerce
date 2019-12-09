@@ -7,7 +7,7 @@ import {
   addItem,
   removeItem
 } from '../../redux/cart/cart.actions';
-import './checkout-item.styles.scss';
+//import './checkout-item.styles.scss';
 
 export interface ICartItemProps {
   cartItem: ITypeData;

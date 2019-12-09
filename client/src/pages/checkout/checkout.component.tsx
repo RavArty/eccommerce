@@ -12,7 +12,7 @@ import {
   selectCartTotal
 } from '../../redux/cart/cart.selectors';
 
-import './checkout.styles.scss';
+//import './checkout.styles.scss';
 
 interface ICheckoutPageProps {
   cartItems: ITypeData[];
