@@ -12,6 +12,8 @@
   text-transform: uppercase;
   cursor: pointer;
   border: none;
+  display: flex;
+  justify-content: center;
   transition: all 0.2s;
 
   &:hover,

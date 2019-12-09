@@ -8,7 +8,7 @@ import { selectCollectionsForPreview } from '../../redux/shop/shop.selectors';
 
 import { AppState } from '../../redux/root-reducer';
 import { IMenuItems } from '../directory/directory.component';
-import './collections-overview.styles.scss';
+//import './collections-overview.styles.scss';
 
 interface ICollectionsOverviewProps {
   collections: IMenuItems[];
