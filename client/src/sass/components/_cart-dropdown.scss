@@ -1,0 +1,29 @@
+.cart-dropdown {
+  position: absolute;
+  width: 24rem;
+  height: 34rem;
+  top: 9rem;
+  right: 4rem;
+  display: flex;
+  flex-direction: column;
+  border: $line;
+  border-radius: 5px;
+  background-color: $color-grey-light-1;
+  box-shadow: $shadow-light;
+  padding: 20px;
+  z-index: 5;
+
+  animation-name: dropDownMenu;
+  animation-duration: 0.5s;
+  //animation-timing-function: ease-out;
+
+  .cart-items {
+    height: 24rem;
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
+  }
+  button {
+    margin-top: auto;
+  }
+}

@@ -13,7 +13,7 @@ import { ReactComponent as Logo } from '../../assets/logo.svg';
 
 import { UserState } from '../../redux/user/user.actions';
 import { AppState } from '../../redux/root-reducer';
-import './header.styles.scss';
+//import './header.styles.scss';
 
 export interface IHeaderProps {
   currentUser: UserState;
@@ -34,9 +34,9 @@ export const Header = ({ currentUser, hidden }: IHeaderProps): JSX.Element => (
       <Link className="option" to="/shop">
         SHOP
       </Link>
-      <Link className="option" to="/shop">
+      {/* <Link className="option" to="/shop">
         CONTACT
-      </Link>
+      </Link> */}
       {currentUser ? (
         <div className="option" onClick={() => auth.signOut()}>
           SIGN OUT
