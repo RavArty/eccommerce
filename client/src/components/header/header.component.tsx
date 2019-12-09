@@ -9,8 +9,8 @@ import CartDropdown from '../cart-dropdown/cart-dropdown.component';
 import { selectCartHidden } from '../../redux/cart/cart.selectors';
 import { selectCurrentUser } from '../../redux/user/user.selectors';
 
-import { ReactComponent as Logo } from '../../assets/logo.svg';
-
+// import { ReactComponent as Logo } from '../../assets/logo.svg';
+import logo from '../../assets/logo.png';
 import { UserState } from '../../redux/user/user.actions';
 import { AppState } from '../../redux/root-reducer';
 //import './header.styles.scss';
@@ -28,7 +28,8 @@ export interface IHeaderProps {
 export const Header = ({ currentUser, hidden }: IHeaderProps): JSX.Element => (
   <div className="header">
     <Link className="logo-container" to="/">
-      <Logo className="logo" />
+      {/* <Logo className="logo" /> */}
+      <img src={logo} alt="logo" />
     </Link>
     <div className="options">
       <Link className="option" to="/shop">
