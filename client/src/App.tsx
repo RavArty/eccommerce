@@ -16,7 +16,7 @@ import { selectCurrentUser } from './redux/user/user.selectors';
 
 import { AppState } from './redux/root-reducer';
 
-import './App.css';
+//import './App.css';
 
 // interface Entity {
 //   id: string;

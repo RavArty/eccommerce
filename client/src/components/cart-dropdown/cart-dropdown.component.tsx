@@ -12,7 +12,7 @@ import { AppState } from '../../redux/root-reducer';
 import { ITypeData } from '../collection-item/collection-item.component';
 //import { RouteComponentProps } from 'react-router-dom';
 import { History } from 'history';
-import './cart-dropdown.styles.scss';
+//import './cart-dropdown.styles.scss';
 
 export interface ICartDropdownProps {
   cartItems: ITypeData[];
@@ -41,7 +41,7 @@ export const CartDropdown = ({
         dispatch(toggleCartHidden());
       }}
     >
-      GO TO CHECKOUT
+      CHECKOUT
     </CustomButton>
   </div>
 );
