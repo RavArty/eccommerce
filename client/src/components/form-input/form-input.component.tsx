@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './form-input.styles.scss';
+//import './form-input.styles.scss';
 interface IFormatInput {
   handleChange?(event: React.SyntheticEvent<HTMLInputElement>): void;
   label: string;

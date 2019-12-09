@@ -5,11 +5,15 @@
   margin-bottom: 4rem;
 
   .logo-container {
-    height: 100%;
-    width: 20rem;
-    fill: white;
-  }
+    // height: 5%;
+    // width: 2rem;
+    // fill: white;
 
+    img {
+      width: 50%;
+      height: 100%;
+    }
+  }
   .options {
     width: 50%;
     display: flex;
