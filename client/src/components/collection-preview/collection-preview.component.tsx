@@ -1,9 +1,5 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
 import CollectionItem from '../collection-item/collection-item.component';
-
-import { RouteComponentProps } from 'react-router-dom';
-//import './collection-preview.styles.scss';
 
 interface ICollectionPreview {
   title: string;

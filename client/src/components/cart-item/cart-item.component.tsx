@@ -1,6 +1,6 @@
 import React from 'react';
 import { ITypeData } from '../collection-item/collection-item.component';
-import './cart-item.styles.scss';
+//import './cart-item.styles.scss';
 
 interface ICartItemProps {
   item: ITypeData;

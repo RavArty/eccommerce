@@ -1,7 +1,5 @@
 import React from 'react';
 
-//import './custom-buttom.styles.scss';
-
 type CustomButtonProps = {
   children?: string;
   type?: 'submit';

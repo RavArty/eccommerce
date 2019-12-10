@@ -4,8 +4,6 @@ import CustomButton from '../custom-button/custom-button.component';
 import { addItem } from '../../redux/cart/cart.actions';
 import { Dispatch } from 'redux';
 
-//import './collection-item.styles.scss';
-
 export interface ITypeData {
   id: number;
   name: string;
