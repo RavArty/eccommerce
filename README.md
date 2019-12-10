@@ -16,4 +16,7 @@ A fully functional e-commerce website. Users can sign in using Google account or
 ### Deployment
 
 1. Run `yarn`
-2. Run `yarn dev`
+2. Run `cd client`
+3. Run `yarn`
+4. Run `cd ..`
+5. Run `yarn dev`
