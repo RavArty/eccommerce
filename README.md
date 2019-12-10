@@ -6,6 +6,10 @@ A fully functional e-commerce website. Users can sign in using Google account or
 ### Built with
 
 - ReactJS/Redux
+- Typescript
+- Jest, Enzyme
+- NodeJS
+- Express
 - Firebase
 - [StripeAPI](https://stripe.com)
 
