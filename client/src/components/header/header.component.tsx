@@ -29,6 +29,13 @@ export const Header = ({ currentUser, hidden }: IHeaderProps): JSX.Element => (
       <img src={logo} alt="logo" />
     </Link>
     <div className="options">
+      <a
+        className="option"
+        target="_blank"
+        href="https://github.com/RavArty/ecommerce"
+      >
+        GitHub
+      </a>
       <Link className="option" to="/shop">
         SHOP
       </Link>
