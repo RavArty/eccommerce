@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { connect } from 'react-redux';
 
 import CustomButton from '../custom-button/custom-button.component';
@@ -22,27 +22,47 @@ export const CartDropdown = ({
   cartItems,
   history,
   dispatch
-}: ICartDropdownProps): JSX.Element => (
-  <div className="cart-dropdown">
-    <div className="cart-items">
-      {cartItems.length ? (
-        cartItems.map(cartItem => (
-          <CartItem key={cartItem.id} item={cartItem} />
-        ))
-      ) : (
-        <span className="empty-message">Your cart is empty</span>
-      )}
+}: ICartDropdownProps) => {
+  const node = useRef() as React.MutableRefObject<HTMLInputElement>;
+
+  const handleClick = (e: MouseEvent) => {
+    if (node.current.contains(e.target as Node)) {
+      // inside click
+      return;
+    }
+    dispatch(toggleCartHidden());
+  };
+
+  useEffect(() => {
+    document.addEventListener('mousedown', handleClick);
+
+    return () => {
+      document.removeEventListener('mousedown', handleClick);
+    };
+  }, []);
+
+  return (
+    <div className="cart-dropdown" ref={node}>
+      <div className="cart-items">
+        {cartItems.length ? (
+          cartItems.map(cartItem => (
+            <CartItem key={cartItem.id} item={cartItem} />
+          ))
+        ) : (
+          <span className="empty-message">Your cart is empty</span>
+        )}
+      </div>
+      <CustomButton
+        onClick={() => {
+          history.push('/checkout');
+          dispatch(toggleCartHidden());
+        }}
+      >
+        CHECKOUT
+      </CustomButton>
     </div>
-    <CustomButton
-      onClick={() => {
-        history.push('/checkout');
-        dispatch(toggleCartHidden());
-      }}
-    >
-      CHECKOUT
-    </CustomButton>
-  </div>
-);
+  );
+};
 
 const mapStateToProps = (state: AppState) => ({
   cartItems: selectCartItems(state)
