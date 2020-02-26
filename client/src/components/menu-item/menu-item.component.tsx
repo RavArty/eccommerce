@@ -1,13 +1,13 @@
 import React from 'react';
 import { RouteComponentProps, withRouter } from 'react-router-dom';
 
-interface IMenuItemProps extends RouteComponentProps<any> {
+export interface IMenuItemProps extends RouteComponentProps<any> {
   title: string;
   imageUrl: string;
   linkUrl: string;
   size?: string | undefined;
 }
-const MenuItem = ({
+export const MenuItem = ({
   title,
   imageUrl,
   size,

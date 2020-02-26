@@ -27,7 +27,7 @@ interface IAppSelectorState {
 }
 
 export interface IAppState {}
-
+//move from class to function components
 class App extends React.Component<IAppProps, IAppState> {
   unsubscribeFromAuth: firebase.Unsubscribe | null = null;
 

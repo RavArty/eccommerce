@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { connect } from 'react-redux';
 
 import CustomButton from '../custom-button/custom-button.component';
@@ -24,7 +24,7 @@ export const CartDropdown = ({
   dispatch
 }: ICartDropdownProps) => {
   const node = useRef() as React.MutableRefObject<HTMLInputElement>;
-
+  // console.log('history: ', history);
   const handleClick = (e: MouseEvent) => {
     if (node.current.contains(e.target as Node)) {
       // inside click

@@ -42,12 +42,13 @@ describe('CartDropdown component', () => {
     //let wrapper = shallow(<CartDropdown />);
     //  const dropDown = findByTestAttr(wrapper, 'cart-dropdown');
     //  expect(dropDown.length).toBe(0);
-    //  const history = createMemoryHistory();
+    //const history = createMemoryHistory();
     //-----------------------------------------------
     //history.push - wasn't tested
     //-----------------------------------------------
     wrapper.find('CustomButton').simulate('click');
     //   expect(createMemoryHistory()).toHaveBeenCalled();
+    //expect(createMemoryHistory().location.pathname).toBe('/checkout');
     expect(mockDispatch).toHaveBeenCalledWith(toggleCartHidden());
   });
 

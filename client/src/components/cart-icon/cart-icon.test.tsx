@@ -19,7 +19,8 @@ describe('CartIcon component', () => {
     const mockProps = {
       itemCount: 0,
       test: 0,
-      toggleCartHidden: mockToggleCartHidden
+      toggleCartHidden: mockToggleCartHidden,
+      hidden: false
     };
     wrapper = shallow(<CartIcon {...mockProps} />);
   });
